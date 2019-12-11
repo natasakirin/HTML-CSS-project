@@ -1,0 +1,52 @@
+
+
+// SECTION 2
+
+#section-2 {
+    @include borderBottom();
+
+    .jumbotron {
+        background: transparent;
+        margin-bottom: 0;
+        text-align: center;
+
+        .container {
+            @include desktop {
+                display: flex;
+            }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            padding: 0 1rem;
+            @include desktop {
+                flex: 3;
+                font-size: 2rem;
+                text-align: right;
+            }
+        }
+
+        i {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            @include desktop {
+                display: none;
+            }
+        }
+
+        p {
+            padding: 0 1rem;
+            text-align: center;
+
+            @include desktop {
+                flex: 6;
+                margin-top: .3rem;
+                text-align: left;
+            }
+        }
+    }
+}
+
+

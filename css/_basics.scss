@@ -1,0 +1,14 @@
+// LISTS
+ul {
+    list-style: none;
+}
+
+
+// LINKS
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

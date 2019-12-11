@@ -1,0 +1,44 @@
+@import './basics';
+
+@import './variables';
+@import './mixins';
+
+
+
+
+
+@import './font-styles';           // ##############################################################
+
+
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: color(myblue);
+    margin: 0;
+    padding: 0;
+}
+
+
+// imported sections:
+
+@import './1-header';
+@import './2-section-2';
+@import './3-how-it-works';
+@import './4-benefits';
+@import './5-features';
+@import './6-testimonials';
+@import './7-news';
+@import './8-plans';
+@import './9-get-in-touch';
+@import './10-footer';

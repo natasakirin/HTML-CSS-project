@@ -1,0 +1,132 @@
+@import './variables';
+
+
+
+h1 {
+    color: color(myblue);
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1.5em 0 1.5em 0;
+
+    @include tablet {  
+        font-size: 2.9rem;
+    }
+
+    @include desktop {  
+        font-size: 3.3rem;
+    }
+}
+
+
+h3 {
+    color: color(myblue);
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1em 0;
+
+    @include tablet {  
+        font-size: 1.9rem;
+    }
+
+    @include desktop {  
+        font-size: 2.2rem;
+    }
+};
+
+
+
+
+h4 {
+    margin: 2rem 0 0 0;
+    text-align: left;
+    
+    @include mobile {
+        margin-top: .5rem;
+    }
+}
+
+
+
+
+h5 {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0.5em 0;
+    @include tablet {  
+        font-size: 1.5rem;
+    }
+    @include desktop {  
+        font-size: 1.8rem;
+    }
+}
+
+
+p {
+    color: color(myblue);
+    font-size: 0.9rem;
+    text-align: left;
+    padding: 0;
+    @include tablet {  
+        font-size: 1rem;
+        padding: 0.5em 0;
+    }
+}
+
+
+
+
+blockquote {
+    // color: color(myblue);
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1em 0;
+    text-align: left;
+
+    @include tablet {
+        font-size: 1.4rem;
+    }
+    
+    @include desktop {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+.lead {
+    color: color(myblue);
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.5em 0;
+    font-weight: 500;
+
+    @include tablet {  
+        font-size: 1rem;
+    }
+    @include desktop {  
+        font-size: 1.1rem;
+    }
+}
+
+
+// .jumbotron p {
+//     font-weight: 600;
+//     font-size: .7em;
+//     padding: 0;
+//     text-align: center;
+//     @include desktop {  
+//         font-size: 1.3em;
+//     } 
+// }
+
+.smaller {
+    font-size: 90%;
+    font-weight: 300;
+}
+
+
+
+
+

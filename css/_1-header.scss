@@ -1,0 +1,128 @@
+
+
+// HEADER (SECTION-1)
+
+
+.bg-mygray {
+    background-color: color(mygray) !important;
+}
+
+.navbar-brand img {
+    margin-left: -35px;
+}
+
+button {
+    &.btn-myblue {
+        background-color: color(myblue) !important;
+        border-color: color(myblue);
+        color: #fff;
+
+        &:hover {
+            background-color: color(myblue);
+            border-color: color(myblue);
+            color: color(#fff);
+        }
+    }
+
+    &.btn {
+        border-radius: 0;
+        font-weight: 500;
+        padding: .375rem 1.5rem;
+    }
+}
+
+.navbar-text {
+    display: none;
+    font-size: .85em;
+    font-weight: 600;
+    margin-right: 6.3rem;
+    text-transform: uppercase;
+
+    @include desktop {
+        display: flex;
+        text-decoration: none;
+    }
+}
+
+
+.navbar-brand img {
+    margin-left: -35px;
+}
+
+
+
+.navbar a {
+    color: color(myblue);
+    // text-decoration: none;
+}
+
+.navbar-text i {
+    font-size: 1.5em;
+    margin-right: 1rem;
+    margin-top: .05rem;
+}
+
+
+
+
+
+
+
+
+
+
+#section-1 {
+    @include borderBottom();
+    height: 400px;
+    overflow: hidden;
+
+    .jumbotron {
+        background: transparent;
+    }
+
+    .jumbotron h1 {
+        font-size: 2.4em;
+        padding: 0;
+
+        @include desktop {
+            font-size: 4em;
+        }
+    }
+
+    .jumbotron p {
+        font-size: .7em;
+        font-weight: 600;
+        padding: 0;
+        text-align: center;
+        @include desktop {
+            font-size: 1.3em;
+        }
+    }
+
+    .jumbotron img {
+        margin-top: .8rem;
+        width: 90%;
+
+        @include tablet {
+            margin-top: 3rem;
+        }
+    }
+
+    @include mobile {
+        height: 480px;
+    }
+
+    @include tablet {
+        height: 600px;
+    }
+
+    @include desktop {
+        height: 750px;
+    }
+
+    @include wide-desktop {
+        height: 850px;
+    }
+}
+
+

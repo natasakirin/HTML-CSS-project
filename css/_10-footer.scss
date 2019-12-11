@@ -1,0 +1,86 @@
+
+// Section-10: Footer
+
+footer {
+    background-color: color(myblue);
+
+    .top-footer {
+        padding-top: 1rem;
+        text-align: center;
+
+        .footer-text {
+            margin: 0 auto;
+            padding: 0 1rem;
+
+            @include tablet {
+                min-width: 500px;
+                max-width: 50%;
+            }
+        }
+
+        img {
+            background-color: color(myblue);
+            padding: 1rem 0;
+            width: 150px;
+        }
+
+        p {
+            color: color(mygray);
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+    }
+}
+
+.input-group {
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 350px;
+    position: relative;
+    width: 80%;
+
+    @include tablet {
+        width: 60%;
+    }
+
+    .form-control {
+        border: 1px solid color(myblue);
+        border-radius: 0;
+        font-style: italic;
+    }
+
+    .inside-button {
+        bottom: 4px;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        z-index: 10;
+
+        .btn {
+            background-color: color(myblue);
+            border-radius: 3px;
+            color: color(mygray);
+            font-size: .9rem;
+            padding: .2em;
+            width: 110px;
+        }
+    }
+}
+
+.social-media-icons {
+    font-size: .8rem;
+    padding: 2rem 0 1rem 0;
+
+    .icon-background {
+        color: #fff;
+    }
+
+    .fa-stack-1x {
+        color: color(myblue);
+    }
+}
+
+.footer-copyright {
+    background-color: color(mydarkblue);
+    color: color(mygray);
+}
