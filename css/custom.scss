@@ -1,44 +1,869 @@
-@import './basics';
-
 @import './variables';
 @import './mixins';
+@import './functions';
+@import './basic-styles';
 
 
 
 
+// HEADER SECTION - with navbar & showcase-title
 
-@import './font-styles';           // ##############################################################
+nav {
+    .navbar-brand {
+        img {
+            margin-left: -35px;
+        }
+    }
 
+    .navbar-text {
+        display: none;
+        font-size: .85em;
+        font-weight: 600;
+        margin-right: 6.3rem;
+        text-transform: uppercase;
 
+        @include desktop {
+            display: flex;
+        }
 
-@function color($color-name) {
-    @return map-get($colors, $color-name)
+        i {
+            font-size: 1.5em;
+            margin-right: 1rem;
+            margin-top: .05rem;
+        }
+    }
+}
+
+header {
+    @include color-theme($light-theme: true);
+    @include borderBottom();
+
+    height: 400px;
+    overflow: hidden;
+
+    @include mobile {
+        height: 480px;
+    }
+
+    @include tablet {
+        height: 600px;
+    }
+
+    @include desktop {
+        height: 750px;
+    }
+
+    @include wide-desktop {
+        height: 850px;
+    }
+
+    .jumbotron {
+        background: transparent;
+
+        h1 {
+            font-size: 2.4em;
+            padding: 0;
+
+            @include desktop {
+                font-size: 4em;
+            }
+        }
+
+        p {
+            font-size: .7em;
+            font-weight: 600;
+            padding: 0;
+            text-align: center;
+
+            @include desktop {
+                font-size: 1.3em;
+            }
+        }
+
+        img {
+            margin-top: .8rem;
+            width: 90%;
+
+            @include tablet {
+                margin-top: 3rem;
+            }
+        }
+    }
 }
 
 
 
-* {
-    box-sizing: border-box;
+// SECTION-2: announcement
+
+#announcement {
+    @include color-theme(); 
+    @include borderBottom();
+
+    .jumbotron {
+        background: transparent;
+        margin-bottom: 0;
+        text-align: center;
+
+        .container {
+            @include desktop {
+                display: flex;
+            }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            padding: 0 1rem;
+            @include desktop {
+                flex: 3;
+                font-size: 2rem;
+                text-align: right;
+            }
+        }
+
+        i {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            @include desktop {
+                display: none;
+            }
+        }
+
+        p {
+            padding: 0 1rem;
+            text-align: center;
+
+            @include desktop {
+                flex: 6;
+                margin-top: .3rem;
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+
+// SECTION-3: How it works?
+
+#howitworks {
+    @include section-features();
+    text-align: center;
+
+    .showcase-video {
+        img {
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+            width: 50%;
+
+            @include desktop {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem 0 0 ;
+    width: 75%;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .single-step {
+        margin-bottom: 1rem;
+        text-align: center;
+
+        @include desktop {
+            margin-bottom: 1.5rem;
+            width: 25%;
+        }
+
+        img {
+            margin-bottom: .7rem;
+            max-width: 80px;
+
+            @include tablet {
+                max-width: 100px;
+            }
+        }
+
+        h5 {
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    i {
+        display: none;
+        margin-top: 3rem;
+
+        @include tablet {
+            display: block;
+        }
+    }
+}
+
+
+
+// SECTION-4:  BENEFITS
+
+#benefits {
+    @include section-features();
+    text-align: center;
+
+    .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        @include tablet {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        @include desktop {
+            max-width: 940px;
+        }
+
+        .benefit {
+            padding: .4rem;
+            width: 100%;
+
+            @include tablet {
+                margin-bottom: 2rem;
+                padding: 1rem;
+            }
+        }
+
+        h3 {
+            order: 2;
+
+            @include tablet {
+                order: 1;
+                text-align: right;
+            }
+        }
+
+        img {
+            margin-bottom: .7rem;
+            max-height: 200px;
+            max-width: 200px;
+            order: 1;
+
+            @include tablet {
+                order: 2;
+            }
+        }
+
+        p {
+            order: 3;
+            text-align: center;
+            @include tablet {
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+
+// SECTION-5:  FEATURES
+
+#features {
+    @include section-features();
+    background: transparent;
+
+    .feat-container {
+        @include desktop {
+            display: flex;
+        }
+
+        @include desktop {
+            flex: 1;
+        }
+    }
+}
+
+.features-left {
+
+    @include desktop {
+        flex: 2;
+        margin-top: 2rem;
+    }
+
+    .feat-list {
+        display: block;
+
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        @include desktop {
+            padding-left: 2rem;
+        }
+    }
+}
+
+.single-feat {
+    margin: 2rem 0 3rem;
+    padding: 0 2rem;
+    text-align: center;
+
+    @include tablet {
+        margin: .5rem 0;
+        width: 40%;
+    }
+
+    @include desktop {
+        display: flex;
+        padding-right: 0;
+        width: 50%;
+    }
+
+    @include wide-desktop {
+        width: 45%;
+    }
+
+    .feat-img {
+        img {
+            width: 80px;
+            @include tablet {
+                width: 90px;
+            }
+
+            @include desktop {
+                flex: 1;
+                margin-right: .5rem;
+                margin-top: 1rem;
+                max-height: 50px;
+                max-width: 50px;
+            }
+        }
+    }
+
+    .feat-text {
+        @include desktop {
+            padding-left: 2rem;
+        }
+
+        h5 {
+            padding-bottom: 0;
+            text-align: center;
+            @include desktop {
+                text-align: left;
+            }
+        }
+
+        p {
+            text-align: center;
+            @include desktop {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.features-right {
+
+    @include desktop {
+        background-image: url('../images/backgrounds/screen.png');
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex: 1;
+        margin: 5rem 0 0;
+        z-index: -1;
+    }
+}
+
+
+
+// SECTION-6:  TESTIMONIALS
+
+#section-6 {
+    @include section-features();
+
+    h1 {
+
+        @include desktop {
+            padding-bottom: 1rem;
+        }
+    }
+
+    .carousel-inner {
+        display: block;
+        margin: 2rem auto 0;
+        max-width: 900px;
+
+        @include mobile {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .carousel-item {
+            padding: 0 .5rem;
+
+            .container-testimonials {
+                display: flex;
+                flex-direction: column;
+                max-width: 850px;
+
+                @include mobile {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+.carousel-caption {
+    flex: 4;
+    height: auto;
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 300px;
+    order: 2;
+    padding: 1.5rem 3.6rem;
+    position: static;
+
+    @include mobile {
+        order: 1;
+        padding: 1.6rem 0 1.6rem 1.6rem;
+    }
+
+    @include tablet {
+        flex: 3;
+        max-width: 600px;
+        padding: 3.3rem 1rem 1rem 4rem;
+    }
+
+    @include desktop {
+        flex: 5;
+    }
+
+    .testimonials-quote {
+        @include mobile {
+            text-align: left;
+        }
+
+        i {
+            color: color(light);
+            font-size: 2rem;
+            margin-right: .5rem;
+            @include tablet {
+                font-size: 4rem;
+            }
+            @include desktop {
+                font-size: 4.5rem;
+            }
+        }
+
+        blockquote {
+            color: color(primary);
+            display: inline;
+            font-style: italic;
+            @include tablet {
+                display: block;
+                padding-top: 0;
+            }
+        }
+    }
+
+    .testimonials-bottom {
+        @include mobile {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+        }
+
+        @include tablet {
+            padding-top: .5rem;
+        }
+
+        .quote-author {
+            h4 {
+                color: color(primary);
+            }
+
+            p {
+                color: color(midblue);
+            }
+        }
+    }
+}
+
+.carousel-commands {
+    display: none;
+    padding-right: .8rem;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next  {
+        opacity: 1;
+        position: static;
+        text-align: center;
+        transition: opacity .15s ease;
+
+        &:hover {
+        opacity: 1;
+        outline: 0;
+        }
+
+        i {
+            border: 1px solid color(primary);
+            color: color(primary);
+            font-size: 1.5rem;
+            padding: .5rem .8rem;
+
+            @include tablet {
+                font-size: 1.3rem;
+                padding: .4rem .5rem .1rem;
+            }
+
+            @include desktop {
+                font-size: 1.5rem;
+                padding: .5rem .8rem;
+            }
+        }
+    }
+}
+
+.testimonials-right {
     margin: 0;
-    padding: 0;
+    order: 1;
+    text-align: center;
+
+    @include mobile {
+        flex: 3;
+        order: 2;
+    }
+
+    img {
+        height: auto;
+        max-width: 300px;
+        @include mobile {
+            position: relative;
+            top: 40px;
+            width: 90%;
+        }
+        @include tablet {
+            margin-right: 3rem;
+            max-width: 300px;
+            top: 25%;
+            width: 80%;
+        }
+
+        @include desktop {
+            top: 29%;
+            width: 100%;
+        }
+    }
 }
 
-body {
-    color: color(myblue);
-    margin: 0;
-    padding: 0;
+
+
+// SECTION-7:  News
+
+#section-news {
+
+    @include section-features();
+
+    .news-cards {
+        margin: 1.5rem auto;
+        padding: 0 3rem;
+        @include tablet {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 1rem;
+        }
+    }
+}
+
+.single-news {
+    padding-top: 1rem;
+    text-align: center;
+
+    @include mobile {
+        padding: 1rem 3rem;
+    }
+    @include tablet {
+        padding: 0 1rem;
+        width: 30%;
+    }
+
+    img {
+        margin: 0 auto;
+        width: 35%;
+        @include tablet {
+            width: 60%;
+        }
+        @include desktop {
+            width: 50%;
+        }
+    }
+
+    p {
+        font-style: italic;
+        text-align: center;
+    }
 }
 
 
-// imported sections:
+//  SECTION-8:  CHOOSE YOUR PLAN 
 
-@import './1-header';
-@import './2-section-2';
-@import './3-how-it-works';
-@import './4-benefits';
-@import './5-features';
-@import './6-testimonials';
-@import './7-news';
-@import './8-plans';
-@import './9-get-in-touch';
-@import './10-footer';
+#section-plans {
+
+    @include section-features();
+
+    .container {
+        margin: 2em auto;
+    }
+    
+    .card {
+        border: 2px solid  color(primary);
+        border-radius: 0;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        padding-bottom: 2.5rem;
+        transition: .2s;
+
+        button {
+            margin: 2rem auto;
+            padding: .375rem 25%;
+        }
+
+        &:hover {
+            @include color-theme($accent-theme: true);
+            transform: scale(1.05);
+            z-index: 1;
+
+            button {
+                @include btn-hover-light();
+            }
+        }
+
+        @include tablet {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.card-header {
+    align-items: center;
+    background-color: #00000000;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 0 1.25rem;
+
+    i {
+        bottom: 2px;
+        font-size: 1em;
+        margin-right: .5rem;
+        position: relative;
+    }
+
+    div {
+        font-size: .9rem;
+        font-weight: 500;
+    }
+
+    span {
+        font-size: 3.3em;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    &.plan-3 {
+        position: relative;
+        top: 10px;
+    }
+}
+
+.card-body {
+    border: 0;
+
+    li {
+        padding-left: .5em;
+        padding-right: 2em;
+        text-align: center;
+
+        @include tablet {
+            font-weight: 500;
+            text-align: left;
+        }
+
+        i {
+            font-size: 1.5em;
+            padding-right: 1em;
+            position: relative;
+            top: 3px;
+
+            @include tablet {
+                padding-right: 1.5em;
+            }
+        }
+
+        hr {
+            margin: .5rem 0;
+        }
+    }
+}
+
+
+// SECTION: Get in touch
+
+#getintouch {
+
+    @include tablet {
+        position: relative;
+    }
+
+    .background-map {
+        background-image: url('../images/backgrounds/map-lg.png');
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+
+        @include tablet {
+            height: 500px;
+        }
+
+        @include desktop {
+            height: 660px;
+        }
+    }
+
+    .contact-info {
+        padding: 0 15%;
+        @include color-theme();
+
+        @include tablet {
+            max-width: 350px;
+            padding: 1.5rem;
+            position: absolute;
+            right: 0;
+            transform: translate(-20%, 7%);
+            width: 40%;
+        }
+
+        @include desktop {
+            max-width: 400px;
+            padding: 1rem 3rem 2rem;
+            transform: translate(-30%, 35%);
+        }
+
+        h1 {
+            @include tablet {
+                padding: 1rem 0 0;
+                text-align: left;
+            }
+        }
+
+        ul {
+            li {
+                line-height: 2;
+            }
+
+            i {
+                margin-left: .1rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+
+// SECTION-10: Footer
+
+footer {
+    @include color-theme($accent-theme: true);
+
+    .top-footer {
+        padding-top: 1rem;
+        text-align: center;
+
+        .footer-text {
+            margin: 0 auto;
+            padding: 0 1rem;
+
+            @include tablet {
+                min-width: 500px;
+                max-width: 50%;
+            }
+        }
+
+        img {
+            background-color: color(primary);
+            padding: 1rem 0;
+            width: 150px;
+        }
+
+        p {
+            color: color(light);
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+    }
+}
+
+.input-group {
+    margin: 0 auto;
+    max-width: 350px;
+    position: relative;
+
+    .form-control {
+        border: 1px solid color(primary);
+        border-radius: 0;
+        font-style: italic;
+    }
+
+    .btn-position {
+        bottom: 4px;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        z-index: 10;
+    }
+}
+
+.social-media-icons {
+    font-size: .8rem;
+    padding: 2rem 0 1rem;
+
+    .icon-background {
+        color: color(white);
+    }
+}
+
+.footer-copyright {
+    @include color-theme($dark-theme: true);
+}

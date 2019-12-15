@@ -1,0 +1,191 @@
+// Initial settings
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: color(myblue);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+// LISTS
+
+// Default style for unordered lists
+ul {
+    list-style: none;
+}
+
+
+// LINKS
+
+// Basic style for links
+a {
+    color: color(primary);
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover {
+        color: color(primary);
+        text-decoration: none;
+    }
+}
+
+  
+
+//  BUTTON STYLES
+
+// Main button style
+
+.btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-weight: 500;
+    padding: .375rem 1.5rem;
+    text-transform: uppercase;
+  }
+
+
+// Blue button (accent color theme) - with no change on hover 
+
+.btn-myblue {
+    @include color-theme($accent-theme: true);
+    border-color: color(primary);
+
+    &:hover {
+        @include color-theme($accent-theme: true);
+        border-color: color(primary);
+    }
+}
+
+
+// Small-size button
+
+.btn-xs {
+    border-radius: 3px;
+    font-size: .9rem;
+    padding: .2em;
+    width: 110px;
+  }
+
+
+// On-hover button change (to light color theme)
+
+@mixin btn-hover-light {
+    @include color-theme($light-theme: true);
+    border-color: color(light);
+
+    box-shadow: none;
+}
+
+
+
+// TEXT STYLES
+
+h1 {
+    font-size: 2.5rem;
+    padding: 1em 0 .5em;
+    text-align: center;
+
+    @include tablet {
+        font-size: 2.9rem;
+        padding: 1.2em 0 1em;
+    }
+
+    @include desktop {
+        font-size: 3.3rem;
+        padding: 1em 0;
+    }
+}
+
+h3 {
+    color: color(myblue);
+    font-size: 1.4rem;
+    padding: 1em 0;
+    text-align: center;
+
+    @include tablet {
+        font-size: 1.9rem;
+    }
+
+    @include desktop {
+        font-size: 2rem;
+    }
+};
+
+h4 {
+    margin: 2rem 0 0;
+    text-align: left;
+
+    @include mobile {
+        margin-top: .5rem;
+    }
+}
+
+h5 {
+    font-size: 1.3rem;
+    padding: .5em 0;
+    text-align: center;
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include desktop {
+        font-size: 1.8rem;
+    }
+}
+
+p {
+    color: color(myblue);
+    font-size: .9rem;
+    padding: 0;
+    text-align: left;
+
+    @include tablet {
+        font-size: 1rem;
+        padding: .5em 0;
+    }
+}
+
+blockquote {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1em 0;
+    text-align: left;
+
+    @include tablet {
+        font-size: 1.4rem;
+    }
+
+    @include desktop {
+        font-size: 1.5rem;
+    }
+}
+
+.lead {
+    color: color(myblue);
+    font-size: .9rem;
+    font-weight: 500;
+    padding: .5em 0;
+    text-align: left;
+
+    @include tablet {
+        font-size: 1rem;
+    }
+
+    @include desktop {
+        font-size: 1rem;
+    }
+}
+
+.smaller {
+    font-size: 90%;
+    font-weight: 300;
+}

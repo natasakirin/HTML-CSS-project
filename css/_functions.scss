@@ -1,0 +1,16 @@
+@import './variables';
+@import './mixins';
+
+
+//  Set text color
+
+@function color($color-name) {
+    @return map-get($text-colors, $color-name)
+};
+
+
+//  Set background color
+
+@function bg($color-name) {
+    @return map-get($bg-colors, $color-name)
+};
